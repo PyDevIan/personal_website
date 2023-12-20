@@ -16,6 +16,13 @@
         padding: 0;
         
     }
+    .navbar-brand{
+        color: #ffffff;    
+    }
+
+    .navbar-brand:hover{
+        color: #a70c0c;
+    }
 
     .skills-list li {
         margin-bottom: 8px;
@@ -25,8 +32,9 @@
         margin-left: 10px;
         color: #110d0d;
         padding: 0px;
-        white-space: nowrap;
+        white-space: 'white-space-collapse';
     }
+
     hr {
         border: none;
         height: 1px;
