@@ -33,12 +33,19 @@
         color: #110d0d;
         padding: 0px;
         white-space: 'white-space-collapse';
+        font-size: 18px;
     }
 
     hr {
         border: none;
         height: 1px;
         background-color: rgb(0, 0, 0);
+    }
+    article{
+        color: #110d0d;
+        padding: 0px;
+        white-space: 'white-space-collapse';
+        font-size: 18px;
     }
 /* 
     .neural-network {
