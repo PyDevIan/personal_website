@@ -5,7 +5,6 @@
     }
 
     .jumbotron  {
-        
         color: #ffffff;
         padding: 0.8rem;
         margin-bottom: 2rem;
@@ -34,6 +33,7 @@
         padding: 0px;
         white-space: 'white-space-collapse';
         font-size: 18px;
+        margin-bottom: 1rem;
     }
 
     hr {
@@ -43,7 +43,7 @@
     }
     article{
         color: #110d0d;
-        padding: 0px;
+        padding: 0.8rem;
         white-space: 'white-space-collapse';
         font-size: 18px;
     }
