@@ -78,7 +78,7 @@
 
     .tooltip {
       position: absolute;
-      bottom: 120%;
+      top: -70px;
       left: 50%;
       transform: translateX(-50%);
       background: #21262d;
@@ -90,13 +90,14 @@
       visibility: hidden;
       opacity: 0;
       transition: opacity 0.3s;
-      z-index: 10;
+      z-index: 100;
     }
 
     .milestone:hover .tooltip {
       visibility: visible;
       opacity: 1;
     }
+
 
     /* Difficulty cliffs */
     .milestone[data-difficulty="1"] { height: 160px; }
