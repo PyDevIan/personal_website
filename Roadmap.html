@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Technology Manager Roadmap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    
+  />
+  <link rel="stylesheet" href="Static/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #000000, #161b22);
+      color: #e6edf3;
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f0c674;
+      margin-bottom: 60px;
+    }
+
+    .roadmap {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 60px;
+      border-bottom: 2px dashed #30363d;
+    }
+
+    .milestone {
+      position: relative;
+      background-color: #1c2128;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 20px 15px;
+      width: 180px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    .milestone:hover {
+      transform: translateY(-10px);
+    }
+
+    .icon {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .milestone[data-year="2023"] .icon { color: #f0c674; }
+    .milestone[data-year="2024"] .icon { color: #b392f0; }
+    .milestone[data-year="2025 Q1-Q2"] .icon { color: #58a6ff; }
+    .milestone[data-year="2025 Q3-Q4"] .icon { color: #00e5ff; }
+    .milestone[data-year="2026"] .icon { color: #00e676; }
+    .milestone[data-year="2028"] .icon { color: #ffb300; }
+
+    .year {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 5px;
+    }
+
+    .desc {
+      font-size: 0.9em;
+      color: #c9d1d9;
+      opacity: 0.85;
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #21262d;
+      color: #e6edf3;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.8em;
+      white-space: nowrap;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 10;
+    }
+
+    .milestone:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Difficulty cliffs */
+    .milestone[data-difficulty="1"] { height: 160px; }
+    .milestone[data-difficulty="2"] { height: 190px; }
+    .milestone[data-difficulty="3"] { height: 220px; }
+    .milestone[data-difficulty="4"] { height: 260px; }
+    .milestone[data-difficulty="5"] { height: 300px; }
+
+    @media (max-width: 768px) {
+      .roadmap {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg " style="background-color: black;">
+      <a class="navbar-brand" href="index.html" >Home</a>
+      <a class="navbar-brand" href="Skillset.html" >My Skillset </a>
+      <!-- <a class="navbar-brand" href="projects.html" >Projects</a> -->
+      <a class="navbar-brand" href="reading.html" >Reading About</a>
+      <a class="navbar-brand" href="milestones.html" >Milestones</a>
+      <a class="navbar-brand" href="contact.html" >Contact Me</a>
+      <a class="navbar-brand" href="Roadmap.html" >Roadmap</a>
+</nav>  
+  <h1>AI Technology Manager Roadmap</h1>
+
+  <div class="roadmap">
+    <div class="milestone" data-year="2023" data-difficulty="1">
+      <div class="icon"><i class="fas fa-certificate"></i></div>
+      <div class="year">2023</div>
+      <div class="desc">Certifications in Data Science, ML, AI Engineering</div>
+      <div class="tooltip">Foundation of core AI knowledge</div>
+    </div>
+
+    <div class="milestone" data-year="2024" data-difficulty="2">
+      <div class="icon"><i class="fas fa-flask"></i></div>
+      <div class="year">2024</div>
+      <div class="desc">AI Researcher & Full Stack Python Developer</div>
+      <div class="tooltip">Dual role in research and web/backend dev</div>
+    </div>
+
+    <div class="milestone" data-year="2025 Q1-Q2" data-difficulty="3">
+      <div class="icon"><i class="fas fa-robot"></i></div>
+      <div class="year">2025 Q1–Q2</div>
+      <div class="desc">LangChain, Prompting, Power Platform</div>
+      <div class="tooltip">Building GenAI tools & interfaces</div>
+    </div>
+
+    <div class="milestone" data-year="2025 Q3-Q4" data-difficulty="4">
+      <div class="icon"><i class="fas fa-brain"></i></div>
+      <div class="year">2025 Q3–Q4</div>
+      <div class="desc">LLM Fine-Tuning (LoRA, PEFT, RLHF)</div>
+      <div class="tooltip">Deep neural tweaking & custom LLMs</div>
+    </div>
+
+    <div class="milestone" data-year="2026" data-difficulty="4">
+      <div class="icon"><i class="fas fa-network-wired"></i></div>
+      <div class="year">2026</div>
+      <div class="desc">Deep Learning, MSc Completion, MLOps</div>
+      <div class="tooltip">End-to-end system architecting</div>
+    </div>
+
+    <div class="milestone" data-year="2028" data-difficulty="5">
+      <div class="icon"><i class="fas fa-sitemap"></i></div>
+      <div class="year">2028</div>
+      <div class="desc">AI Technology Manager</div>
+      <div class="tooltip">Leadership, strategy, hiring, vision</div>
+    </div>
+  </div>
+     <!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
