@@ -34,7 +34,9 @@
       flex-wrap: nowrap;
       overflow-x: auto;
       padding-bottom: 60px;
+      padding-top: 100px; /* 👈 add this */
       border-bottom: 2px dashed #30363d;
+      position: relative; /* required for absolute positioning inside */
     }
 
     .milestone {
@@ -83,14 +85,18 @@
       transform: translateX(-50%);
       background: #21262d;
       color: #e6edf3;
-      padding: 8px 12px;
+      padding: 10px 14px;
       border-radius: 6px;
       font-size: 0.8em;
-      white-space: nowrap;
+      white-space: normal;      /* 👈 allows wrapping */
+      max-width: 500px;         /* 👈 controls width */
+      text-align: center;
       visibility: hidden;
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: opacity 0.3s ease;
       z-index: 100;
+      box-shadow: 0 0 8px rgba(0,0,0,0.4);
+      line-height: 1.2;
     }
 
     .milestone:hover .tooltip {
@@ -101,15 +107,15 @@
 
 
     /* Difficulty cliffs */
-    .milestone[data-difficulty="1"] { height: 160px; }
-    .milestone[data-difficulty="2"] { height: 190px; }
-    .milestone[data-difficulty="3"] { height: 220px; }
+    .milestone[data-difficulty="1"] { height: 190px; }
+    .milestone[data-difficulty="2"] { height: 210px; }
+    .milestone[data-difficulty="3"] { height: 230px; }
     .milestone[data-difficulty="4"] { height: 260px; }
     .milestone[data-difficulty="5"] { height: 300px; }
-    .milestone[data-difficulty="6"] { height: 360px; }
-    .milestone[data-difficulty="7"] { height: 420px; }
+    .milestone[data-difficulty="6"] { height: 340px; }
+    .milestone[data-difficulty="7"] { height: 380px; }
 
-    @media (max-width: 768px) {
+    @media (max-width: 800px) {
       .roadmap {
         flex-direction: column;
         align-items: center;
