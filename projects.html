@@ -63,7 +63,7 @@
     <nav class="navbar navbar-expand-lg fixed-top" style="background-color: black;">
         <a class="navbar-brand" href="index.html">Home</a>
         <a class="navbar-brand" href="Skillset.html">My Skillset</a>
-        <!-- <a class="navbar-brand" href="projects.html">Portfolio</a> -->
+        <a class="navbar-brand" href="projects.html">Portfolio</a>
         <a class="navbar-brand" href="reading.html">Reading About</a>
         <a class="navbar-brand" href="milestones.html">Milestones</a>
         <a class="navbar-brand" href="contact.html">Contact Me</a>
@@ -73,47 +73,59 @@
     <!-- Portfolio Section -->
     <div class="container">
         <h1 class="text-white mb-5 text-center">My Portfolio</h1>
-
-        <!-- PROJECT START -->
         <div class="project-card">
-            <div class="project-title">[Project Title Placeholder]</div>
+            <div class="project-title">Fridge Alert Notification System</div>
 
             <div class="project-section">
                 <strong>Problem:</strong>
-                <p>Describe the business/technical problem this project solves.</p>
+                <p>
+                    Industrial fridges must maintain strict temperature control for food safety. When a temperature breach is recorded by a fridge monitoring device, delays in response can cause product loss, compliance issues, or operational downtime. There was no automated alert system in place to track, assign, and escalate these events in real time.
+                </p>
             </div>
 
             <div class="project-section">
                 <strong>Solution:</strong>
-                <p>Explain your solution approach, architecture, and reasoning.</p>
+                <p>
+                    I developed an automated notification agent that monitors a dedicated inbox for alert emails sent by the fridge's industrial recorder. Upon detecting a new alert, it initiates a message loop in Microsoft Teams, notifying key roles (Factory Director, Head Mechanic, Automation Expert).
+                    <br><br>
+                    A FastAPI-powered web interface allows technicians to claim or acknowledge the alert, recording their action. If no one responds within a time window, the agent escalates the alert by re-notifying the team. The loop continues until a resolution email is detected (same device ID, alert marked inactive).
+                    <br><br>
+                    All alerts, acknowledgments, and responsible personnel are logged in a structured CSV file for auditability and trend analysis.
+                </p>
             </div>
 
             <div class="project-section project-media">
                 <strong>Demo:</strong>
                 <p>
-                    <!-- Replace below with actual media -->
-                    <img src="Static/images/demo_placeholder.jpg" alt="Project Screenshot">
-                    <!-- OR embed a video demo -->
-                    <!-- <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe> -->
+                    <!-- Replace below with your image or demo video -->
+                    <img src="Static/alert.png" alt="Fridge Alert Notification in Microsoft Teams">
+                    <img src="Static/fridge_alert.png" alt="Fridge Alert System FastAPI-powered UI">
+                    <!-- Or embed a video -->
+                    <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
                 </p>
             </div>
 
             <div class="project-section project-links">
                 <strong>Links:</strong><br>
-                <a href="https://github.com/your-repo-link" target="_blank">Repository Folder</a>
-                <a href="https://drive.google.com/your-video-link" target="_blank">Video Demo</a>
+                    <a href="#" onclick="return false;" style="pointer-events: none; color: grey; text-decoration: line-through;">
+                    Repository (Private)
+                </a>
+                <p><em>Codebase is internal and protected under NDA.</em></p>
             </div>
 
             <div class="project-section">
                 <strong>Technologies:</strong><br>
                 <span class="tag-badge">Python</span>
-                <span class="tag-badge">LLMs</span>
-                <span class="tag-badge">Streamlit</span>
-                <!-- Add more as needed -->
+                <span class="tag-badge">FastAPI</span>
+                <span class="tag-badge">Microsoft Teams Bot</span>
+                <span class="tag-badge">Email Automation</span>
+                <span class="tag-badge">CSV Logging</span>
+                <span class="tag-badge">AsyncIO</span>
             </div>
         </div>
-        <!-- PROJECT END -->
 
+        <!-- PROJECT END -->
+        
         <!-- Duplicate the project-card div for more projects -->
 
     </div>
