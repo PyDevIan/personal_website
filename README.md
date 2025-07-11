@@ -4,12 +4,11 @@ Welcome to the source code of my personal website!
 
 🔗 **Live site:** [https://pydevian.github.io/personal_website/](https://pydevian.github.io/personal_website/)
 
-This website serves as my digital presence, where I share my background, technical expertise, ongoing projects, and personal journey in AI, data science, and machine learning. It also includes a curated knowledge hub of what I’m learning, building, and planning.
+This website serves as my digital presence, where I share my background, technical expertise, ongoing projects, and personal journey in AI, data science, and machine learning. It also includes a curated knowledge hub of what I’m learning, building, and planning
 
 ---
 
 ## 📁 Project Structure
-
 
 personal_website/
 
@@ -43,16 +42,18 @@ personal_website/
 
 └── README.md              # You’re here
 
-
 ---
+
 ## ✨ Features
 
-- 🎨 **Dark theme**, minimalist layout, fully responsive with Bootstrap 4  
-- 🧠 **Portfolio section** for demo videos and writeups of my private projects (code redacted due to confidentiality)  
-- 📖 **Reading section** for AI/ML research logs, key papers, and personal study notes  
-- 🗺️ **Roadmap and Milestones** to document progress and plan future exploration  
+- 🎨 **Dark theme**, minimalist layout, fully responsive with Bootstrap 4
+- 🧠 **Portfolio section** for demo videos and writeups of my private projects (code redacted due to confidentiality)
+- 📖 **Reading section** for AI/ML research logs, key papers, and personal study notes
+- 🗺️ **Roadmap and Milestones** to document progress and plan future exploration
 - ✉️ **Contact page** to connect, collaborate, or reach out
+
 ---
+
 ## 🧱 Project Portfolio Guidelines
 
 The `projects.html` page showcases my work using media-rich cards. Each entry includes:
