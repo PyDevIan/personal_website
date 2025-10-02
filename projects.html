@@ -125,7 +125,77 @@
         </div>
 
         <!-- PROJECT END -->
-        
+         <!-- PROJECT: Invoice Extraction -->
+    <div class="project-card">
+        <div class="project-title">Invoice Extraction & Excel→ERP Pipeline</div>
+
+        <div class="project-section">
+            <strong>Problem:</strong>
+            <p>
+                The finance team receives heterogeneous invoices (Greek/English, mixed layouts) as PDFs and images.
+                Manual keying into the company’s Excel template and then into the ERP is slow, error-prone, and hard to audit.
+                We needed an automated, auditable pipeline that extracts structured fields and adds
+                a human-in-the-loop validation step before bulk uploading into the ERP.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <strong>Solution:</strong>
+            <p>
+                I built a modular extraction service that combines PDF text parsing, OCR with layout awareness, and
+                an LLM-based normalizer to produce a clean, strict schema
+                (Supplier, Invoice Serial, Date, VAT/AFM, Total, TAX, Description, Cost Center).
+                A Streamlit validator app lets authorized users review each row, stamp it as <em>OK</em>, and export only validated rows.
+                An accuracy evaluator measures model quality against ground truth and guides iterative improvements.
+                Finally, validated Excel batches are uploaded to the ERP in one shot.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <strong>How it Works (Pipeline):</strong>
+            <p>
+                <ol style="padding-left:1.2rem;margin:0;">
+                    <li><em>Ingestion</em> — Watch an input folder for PDFs/PNGs. Prefer embedded PDF text; fallback to OCR with layout JSON. Cache all artifacts (raw text, OCR JSON, page thumbnails).</li>
+                    <li><em>Targeted ROI Corrections</em> — For hard fields (VAT/AFM, totals, serial), locate labels/bounding boxes, crop regions on the saved page image, and re-OCR just those areas; run AFM checksum & amount normalization.</li>
+                    <li><em>LLM Normalization</em> — Feed text + corrected hints into the model with a strict JSON contract; enforce types (ISO date, 2-decimal amounts, 9-digit VAT), then write a row to a master Excel file.</li>
+                    <li><em>Accuracy Evaluator</em> — Optionally compare extracted rows against a ground-truth Excel using exact and fuzzy metrics per field plus row-level hybrid scoring. Export a mismatch report for training/threshold tuning.</li>
+                    <li><em>Human-in-the-Loop Validator (Streamlit)</em> — Secure login; left-pane fields; right-pane PDF preview. Editors can adjust fields, select Cost Center, then stamp the row as <strong>OK</strong>. Only <strong>OK</strong> rows are eligible for export.</li>
+                    <li><em>Validated Export</em> — Create a new Excel with <strong>OK & not yet exported</strong> rows. Mark those rows as <strong>EXPORTED</strong> in the master sheet (with user/date stamp) to prevent duplicates.</li>
+                    <li><em>ERP Batch Upload</em> — The exported Excel follows the ERP’s import schema. A lightweight uploader script posts the file to the ERP endpoint (or drops it to a watched folder), logging responses for auditability.</li>
+                </ol>
+            </p>
+        </div>
+
+        <div class="project-section project-media">
+            <strong>Visual Preview:</strong>
+            <p>
+                <!-- Replace the image paths below with your generated assets -->
+                <img src="Static/invoice_flow.png" alt="Invoice Extraction & Validation Flow">
+            </p>
+        </div>
+
+        <div class="project-section project-links">
+            <strong>Links:</strong><br>
+            <a href="#" onclick="return false;" style="pointer-events: none; color: grey; text-decoration: line-through;">
+                Repository (Private)
+            </a>
+            <p><em>Codebase is internal and protected under NDA.</em></p>
+        </div>
+
+        <div class="project-section">
+            <strong>Technologies:</strong><br>
+            <span class="tag-badge">Python</span>
+            <span class="tag-badge">pdfplumber / PyMuPDF</span>
+            <span class="tag-badge">OCR + Layout JSON</span>
+            <span class="tag-badge">OpenAI / LLaMA</span>
+            <span class="tag-badge">Streamlit (Validator)</span>
+            <span class="tag-badge">Pandas / OpenPyXL</span>
+            <span class="tag-badge">Excel→ERP Batch Upload</span>
+            <span class="tag-badge">Auth & Audit Stamps</span>
+            <span class="tag-badge">Accuracy Evaluator</span>
+        </div>
+    </div>
+    <!-- PROJECT END -->
         <!-- Duplicate the project-card div for more projects -->
 
     </div>
