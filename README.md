@@ -26,7 +26,7 @@ personal_website/
 
 ├── contact.html           # Contact form or reach-out details
 
-├── Roadmap.html           # Ongoing and future learning/projects
+├── Roadmap.html           # Ongoing and future career advamcement goals
 
 │
 
