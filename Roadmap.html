@@ -5,12 +5,19 @@
   <title>AI Systems Architect Roadmap</title>
   <link rel="icon" type="image/x-icon" href="Static/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
+
+  <!-- Your global CSS -->
   <link rel="stylesheet" href="Static/style.css">
+
+  <!-- Bootstrap 4 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
   <style>
     body {
       background: linear-gradient(to bottom, #000000, #161b22);
@@ -18,6 +25,7 @@
       font-family: "Segoe UI", sans-serif;
       margin: 0;
       padding: 40px 20px;
+      padding-top: 90px; /* prevents fixed navbar overlap */
     }
 
     h1 {
@@ -33,6 +41,7 @@
       gap: 20px;
       flex-wrap: nowrap;
       overflow-x: auto;
+      overflow-y: visible; /* allows tooltips to escape vertically */
       padding-bottom: 60px;
       padding-top: 100px;
       border-bottom: 2px dashed #30363d;
@@ -45,9 +54,11 @@
       border: 1px solid #30363d;
       border-radius: 10px;
       padding: 20px 15px;
-      width: 180px;
+      width: 220px;
       flex-shrink: 0;
       transition: transform 0.3s;
+      cursor: pointer;
+      outline: none;
     }
 
     .milestone:hover {
@@ -59,69 +70,86 @@
       margin-bottom: 10px;
     }
 
+    /* Icon colors by "year bucket" */
     .milestone[data-year="2023"] .icon { color: #f0c674; }
     .milestone[data-year="2024"] .icon { color: #b392f0; }
-    .milestone[data-year="2025 Q1-Q2"] .icon { color: #58a6ff; }
-    .milestone[data-year="2025 Q3-Q4"] .icon { color: #00e5ff; }
-    .milestone[data-year="2026"] .icon { color: #00e676; }
+    .milestone[data-year="2025"] .icon { color: #58a6ff; }
+    .milestone[data-year="2026 Q1-Q2"] .icon { color: #00e5ff; }
+    .milestone[data-year="2026 Q3-Q4"] .icon { color: #00e676; }
     .milestone[data-year="2027"] .icon { color: #ffb300; }
     .milestone[data-year="2028"] .icon { color: #ff7043; }
 
     .year {
       font-weight: bold;
-      font-size: 1.1em;
-      margin-bottom: 5px;
+      font-size: 1.05em;
+      margin-bottom: 6px;
+      color: #e6edf3;
     }
 
     .desc {
-      font-size: 0.9em;
+      font-size: 0.95em;
       color: #c9d1d9;
-      opacity: 0.85;
+      opacity: 0.9;
     }
 
-    .tooltip {
+    /* Avoid Bootstrap tooltip class name conflict: use milestone-tip */
+    .milestone-tip {
       position: absolute;
-      top: -70px;
+      top: -100px;
       left: 50%;
       transform: translateX(-50%);
       background: #21262d;
       color: #e6edf3;
-      padding: 10px 14px;
-      border-radius: 6px;
-      font-size: 0.8em;
-      white-space: normal;
-      max-width: 500px;
-      text-align: center;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 0.85em;
+      max-width: 520px;
+      text-align: left;
       visibility: hidden;
       opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: 100;
-      box-shadow: 0 0 8px rgba(0,0,0,0.4);
-      line-height: 1.2;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.45);
+      line-height: 1.35;
     }
 
-    .milestone:hover .tooltip {
+    .milestone:hover .milestone-tip,
+    .milestone:focus-within .milestone-tip {
       visibility: visible;
       opacity: 1;
-      overflow: visible;
+      transform: translateX(-50%) translateY(-6px);
     }
 
-    .milestone[data-difficulty="1"] { height: 190px; }
-    .milestone[data-difficulty="2"] { height: 210px; }
-    .milestone[data-difficulty="3"] { height: 230px; }
-    .milestone[data-difficulty="4"] { height: 260px; }
-    .milestone[data-difficulty="5"] { height: 300px; }
-    .milestone[data-difficulty="6"] { height: 340px; }
-    .milestone[data-difficulty="7"] { height: 380px; }
+    /* Difficulty height ladder (visual progression) */
+    .milestone[data-difficulty="1"] { height: 200px; }
+    .milestone[data-difficulty="2"] { height: 225px; }
+    .milestone[data-difficulty="3"] { height: 255px; }
+    .milestone[data-difficulty="4"] { height: 295px; }
+    .milestone[data-difficulty="5"] { height: 335px; }
+    .milestone[data-difficulty="6"] { height: 380px; }
+    .milestone[data-difficulty="7"] { height: 430px; }
 
     @media (max-width: 800px) {
       .roadmap {
         flex-direction: column;
         align-items: center;
+        padding-top: 40px;
+      }
+      .milestone-tip {
+        top: -10px;
+        left: 0;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+      }
+      .milestone:hover .milestone-tip,
+      .milestone:focus-within .milestone-tip {
+        transform: translateY(-6px);
       }
     }
   </style>
 </head>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top" style="background-color: black; padding-top: 0%;">
@@ -132,62 +160,90 @@
     <a class="navbar-brand" href="milestones.html">Milestones</a>
     <a class="navbar-brand" href="contact.html">Contact Me</a>
     <a class="navbar-brand" href="Roadmap.html">Roadmap</a>
-  </nav>  
+  </nav>
 
   <h1>AI Systems Architect Roadmap</h1>
 
   <div class="roadmap">
-    <div class="milestone" data-year="2023" data-difficulty="1">
-      <div class="icon"><i class="fas fa-certificate"></i></div>
+    <div class="milestone" tabindex="0" data-year="2023" data-difficulty="1">
+      <div class="icon"><i class="fas fa-layer-group"></i></div>
       <div class="year">2023</div>
-      <div class="desc">Python, Data Science & Machine Learning</div>
-      <div class="tooltip">Core foundation: Python programming, ML A–Z, data analytics, and scientific computing</div>
+      <div class="desc">Foundations: Python + Data/ML Core</div>
+      <div class="milestone-tip">
+        Built the base stack: Python proficiency, data wrangling, ML fundamentals, evaluation basics.<br/>
+        <b>Outputs:</b> small ML projects, reproducible notebooks, solid tooling habits (Git, environments).<br/>
+        <b>Next:</b> deep learning + cloud entry certifications.
+      </div>
     </div>
 
-    <div class="milestone" data-year="2024" data-difficulty="2">
-      <div class="icon"><i class="fas fa-flask"></i></div>
-      <div class="year">2024</div>
-      <div class="desc">TensorFlow, AI Bootcamps & Cloud Fundamentals</div>
-      <div class="tooltip">Deep learning with TensorFlow 2.0, Azure AI-900, Git & SQL mastery, GenAI summer school</div>
-    </div>
-
-    <div class="milestone" data-year="2025 Q1-Q2" data-difficulty="3">
-      <div class="icon"><i class="fas fa-code"></i></div>
-      <div class="year">2025 Q1–Q2</div>
-      <div class="desc">TypeScript + React + Vite Integration</div>
-      <div class="tooltip">Full-stack evolution: mastering modern frontend with TS, Vite, React; integrating FastAPI backend</div>
-    </div>
-
-    <div class="milestone" data-year="2025 Q3-Q4" data-difficulty="4">
+    <div class="milestone" tabindex="0" data-year="2024" data-difficulty="2">
       <div class="icon"><i class="fas fa-brain"></i></div>
-      <div class="year">2025 Q3–Q4</div>
-      <div class="desc">Advanced Deep Learning & LLM Engineering</div>
-      <div class="tooltip">PyTorch, HuggingFace Transformers, RAG systems, LoRA fine-tuning, LangChain pipelines</div>
+      <div class="year">2024</div>
+      <div class="desc">Deep Learning + Cloud Fundamentals</div>
+      <div class="milestone-tip">
+        Advanced into neural networks with TensorFlow and strengthened cloud/AI fundamentals (AI-900 scope).<br/>
+        <b>Skills:</b> training workflows, overfitting control, basic deployment thinking, stronger SQL usage.<br/>
+        <b>Next:</b> production APIs + containers + MLOps habits.
+      </div>
     </div>
 
-    <div class="milestone" data-year="2026" data-difficulty="5">
-      <div class="icon"><i class="fas fa-network-wired"></i></div>
-      <div class="year">2026</div>
-      <div class="desc">MLOps & AI Infrastructure</div>
-      <div class="tooltip">Docker, Kubernetes, CI/CD for AI, MLflow, and scalable cloud model deployment</div>
+    <div class="milestone" tabindex="0" data-year="2025" data-difficulty="3">
+      <div class="icon"><i class="fas fa-code"></i></div>
+      <div class="year">2025</div>
+      <div class="desc">Applied AI Engineering: APIs + Delivery</div>
+      <div class="milestone-tip">
+        Shifted from “models” to “systems”: Streamlit/Flask/FastAPI services, integrations, real deliverables.<br/>
+        <b>Skills:</b> clean architecture, API design, packaging, Docker fundamentals, observability basics.<br/>
+        <b>Next:</b> end-to-end ownership + governance patterns.
+      </div>
     </div>
 
-    <div class="milestone" data-year="2027" data-difficulty="6">
-      <div class="icon"><i class="fas fa-server"></i></div>
+    <div class="milestone" tabindex="0" data-year="2026 Q1-Q2" data-difficulty="4">
+      <div class="icon"><i class="fas fa-scale-balanced"></i></div>
+      <div class="year">2026 Q1–Q2</div>
+      <div class="desc">AI Lead Engineer: Ownership + Governance</div>
+      <div class="milestone-tip">
+        Leadership phase: establishing AI department practices and governance across projects.<br/>
+        <b>Scope:</b> standards (data, evaluation, deployment), documentation, risk controls, stakeholder alignment.<br/>
+        <b>Next:</b> formal cloud AI engineering certs + stronger frontend delivery for products.
+      </div>
+    </div>
+
+    <div class="milestone" tabindex="0" data-year="2026 Q3-Q4" data-difficulty="5">
+      <div class="icon"><i class="fas fa-gears"></i></div>
+      <div class="year">2026 Q3–Q4</div>
+      <div class="desc">Full-Stack AI Developer: Certs + Product UI</div>
+      <div class="milestone-tip">
+        Certification + product polish phase.<br/>
+        <b>Targets:</b> PCPP1, Azure AI-102 track, improved frontend delivery (Jinja2 + Bootstrap).<br/>
+        <b>Outcome:</b> faster end-to-end shipping from UI → API → data → model.
+      </div>
+    </div>
+
+    <div class="milestone" tabindex="0" data-year="2027" data-difficulty="6">
+      <div class="icon"><i class="fas fa-diagram-project"></i></div>
       <div class="year">2027</div>
-      <div class="desc">AI Systems Architecture</div>
-      <div class="tooltip">Designing multi-service AI systems, vector databases, observability, real-time inference APIs</div>
+      <div class="desc">AI Systems Architecture: Multi-service Design</div>
+      <div class="milestone-tip">
+        Designing complete AI platforms: service boundaries, vector DB patterns, observability, realtime inference APIs.<br/>
+        <b>Focus:</b> reliability, scalability, cost control, monitoring, incident-ready systems.<br/>
+        <b>Next:</b> enterprise-wide reference architectures and strategy impact.
+      </div>
     </div>
 
-    <div class="milestone" data-year="2028" data-difficulty="7">
-      <div class="icon"><i class="fas fa-sitemap"></i></div>
+    <div class="milestone" tabindex="0" data-year="2028" data-difficulty="7">
+      <div class="icon"><i class="fas fa-chess-king"></i></div>
       <div class="year">2028</div>
-      <div class="desc">AI Systems Architect</div>
-      <div class="tooltip">Leadership in AI strategy, architecture, MLOps orchestration, and next-gen intelligent systems</div>
+      <div class="desc">AI Systems Architect: Strategy + Platform Leadership</div>
+      <div class="milestone-tip">
+        Full architecture ownership: AI strategy, reference architectures, MLOps orchestration, analytics path (DP-600 scope).<br/>
+        <b>Outcome:</b> organization-wide standards + scalable AI platform delivery.<br/>
+        <b>North star:</b> “AI systems that survive reality.”
+      </div>
     </div>
   </div>
 
-  <!-- Bootstrap JS and Popper.js -->
+  <!-- Bootstrap JS (keep if you need other Bootstrap components) -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
