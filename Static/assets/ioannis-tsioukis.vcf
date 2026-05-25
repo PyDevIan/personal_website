@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Tsioukis;Ioannis;;;
+FN:Ioannis Tsioukis
+TITLE:AI/ML Full-Stack Engineering Lead
+ORG:ARI Foods
+EMAIL;TYPE=INTERNET,WORK:ai.research1@arifoods.gr
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/ioannis-tsioukis/
+URL;TYPE=GitHub:https://github.com/PyDevIan
+URL;TYPE=Website:https://pydevian.github.io/personal_website/
+NOTE:AI Systems, Automation, Full-Stack Engineering, Machine Learning
+END:VCARD
