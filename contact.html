@@ -148,6 +148,28 @@
             text-align: center;
         }
 
+        .vcard-qr {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .vcard-qr img {
+            width: 168px;
+            max-width: 100%;
+            height: auto;
+            padding: 0.55rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+        }
+
+        .vcard-qr p {
+            margin-top: 0.7rem;
+            margin-bottom: 0;
+            color: #b9c5d8;
+            font-size: 0.9rem;
+        }
+
         @media (min-width: 576px) {
             .vcard-card {
                 padding: 2rem;
@@ -160,19 +182,30 @@
             .vcard-name {
                 font-size: 2.3rem;
             }
+
+            .vcard-qr img {
+                width: 188px;
+            }
         }
     </style>
 </head>
 <body class="vcard-body">
 
-    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: black;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black;">
         <a class="navbar-brand" href="index.html">Home</a>
-        <a class="navbar-brand" href="Skillset.html">My Skillset</a>
-        <a class="navbar-brand" href="projects.html">Portfolio</a>
-        <a class="navbar-brand" href="reading.html">Tech News</a>
-        <a class="navbar-brand" href="milestones.html">Milestones</a>
-        <a class="navbar-brand" href="contact.html" aria-current="page">Contact Me</a>
-        <a class="navbar-brand" href="Roadmap.html">Roadmap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#siteNavbar" aria-controls="siteNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="siteNavbar">
+            <div class="navbar-nav ml-auto">
+                <a class="navbar-brand" href="Skillset.html">My Skillset</a>
+                <a class="navbar-brand" href="projects.html">Portfolio</a>
+                <a class="navbar-brand" href="reading.html">Tech News</a>
+                <a class="navbar-brand" href="milestones.html">Milestones</a>
+                <a class="navbar-brand" href="contact.html" aria-current="page">Contact Me</a>
+                <a class="navbar-brand" href="Roadmap.html">Roadmap</a>
+            </div>
+        </div>
     </nav>
 
     <main class="vcard-main" id="main-content">
@@ -223,6 +256,10 @@
                     <i class="fa fa-home" aria-hidden="true"></i>
                     <span>Visit Blog</span>
                 </a>
+            </div>
+
+            <div class="vcard-qr" aria-label="QR code for contact card">
+                <img src="Static/assets/Tsioukis.png" alt="QR code for saving Ioannis Tsioukis contact card">
             </div>
 
             <p class="vcard-footer-note">Save the contact card or connect directly using the links above.</p>
