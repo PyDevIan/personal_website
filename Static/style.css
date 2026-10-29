@@ -99,10 +99,14 @@ hr { border: 0; height: 1px; background: var(--border); margin: 2rem 0; }
 .project-card h3 { font-size: 1.05rem; color: var(--muted); }
 .project-media img { display: block; width: auto; height: auto; max-height: 720px; margin-bottom: 1rem; border: 1px solid var(--border); }
 .tag-badge { display: inline-block; margin-top: 0.4rem; line-height: 1.5; }
-.reading-content article { padding: 0.5rem 0; }
-.reading-content h3 { font-size: 1.45rem; color: var(--accent); }
-.reading-content .btn-outline-dark { color: var(--accent); border-color: var(--border); }
-.reading-content .btn { white-space: normal; margin-bottom: 0.5rem; border-radius: 8px; }
+.approach-intro { max-width: 760px; margin-bottom: 2.5rem; }
+.approach-eyebrow { color: var(--accent); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.approach-steps { list-style: none; padding-left: 0; }
+.approach-steps .card { border-left: 1px solid var(--border); }
+.approach-number { display: block; color: var(--accent); font-size: 1rem; font-weight: 600; margin-bottom: 1rem; font-variant-numeric: tabular-nums; }
+.approach-outcome { margin: 1.25rem 0 0; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.95rem; }
+.approach-next { border-top: 1px solid var(--border); margin-top: 1rem; padding-top: 2.5rem; text-align: center; }
+.approach-next p { max-width: 720px; margin-left: auto; margin-right: auto; }
 a:focus-visible, button:focus-visible, .milestone:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 @media (max-width: 575px) {
     .jumbotron .display-4 a { display: block; margin-bottom: 0.6rem; }
