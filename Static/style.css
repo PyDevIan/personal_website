@@ -1,69 +1,116 @@
-
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #130f0f;
-    }
-
-    .jumbotron  {
-        color: #ffffff;
-        padding: 0.8rem;
-        margin-bottom: 2rem;
-    }
-
-    .skills-list {
-        list-style-type: none;
-        padding: 0;
-        
-    }
-    .navbar-brand{
-        color: #ffffff;    
-    }
-
-    .navbar-brand:hover{
-        color: #a70c0c;
-    }
-
-    .skills-list li {
-        margin-bottom: 8px;
-    }
-    .container{
-        margin-top: 10px;
-        margin-left: 10px;
-        color: #110d0d;
-        padding: 0px;
-        white-space: 'white-space-collapse';
-        font-size: 18px;
-        margin-bottom: 1rem;
-    }
-
-    hr {
-        border: none;
-        height: 1px;
-        background-color: rgb(0, 0, 0);
-    }
-    article{
-        color: #110d0d;
-        padding: 0.8rem;
-        white-space: 'white-space-collapse';
-        font-size: 18px;
-    }
-/* 
-    .neural-network {
-        width: 200px;
-        height: 150px;
-        background: url('nnw.gif') no-repeat center center;
-        background-size: contain;
-        animation: pulse 2s infinite;
-    }
-    
-    @keyframes pulse {
-        0% {
-        transform: scale(1);
-        }
-        50% {
-        transform: scale(1.1);
-        }
-        100% {
-        transform: scale(1);
-        }
-    } */
+/* Shared visual system. Bootstrap continues to provide layout and navigation. */
+:root {
+    --background: #0b1018;
+    --surface: #121b28;
+    --surface-raised: #1b293b;
+    --text: #e8edf5;
+    --muted: #a7b5c9;
+    --accent: #89d5ed;
+    --border: #2b3b50;
+    --page-background: radial-gradient(ellipse at 50% 0%, #1b2a40 0, #0b1018 65%);
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--page-background);
+    background-color: var(--background);
+    color: var(--text);
+    padding-top: 76px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { line-height: 1.3; letter-spacing: -0.025em; }
+h2 { font-size: clamp(1.6rem, 3vw, 2rem); margin-bottom: 1.25rem; }
+a { color: var(--accent); }
+a:hover { color: #c9efff; }
+.container {
+    max-width: 1120px;
+    margin: 16px auto 3rem;
+    padding: 0 24px;
+    color: inherit;
+    font-size: 1.05rem;
+}
+article { color: inherit; }
+hr { border: 0; height: 1px; background: var(--border); margin: 2rem 0; }
+.navbar {
+    background: rgba(11, 16, 24, 0.96);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    padding: 0.85rem 1.25rem;
+}
+.navbar .navbar-brand { color: var(--muted); font-size: 0.95rem; }
+.navbar-nav .navbar-brand { margin-right: 1.1rem; }
+.navbar .navbar-brand:hover, .navbar [aria-current="page"] { color: var(--accent); }
+.navbar [aria-current="page"] { text-decoration: underline; text-underline-offset: 8px; }
+.jumbotron {
+    color: var(--text);
+    background: transparent;
+    padding: clamp(2.5rem, 6vw, 5rem) 1.25rem 3rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+.jumbotron .display-4 {
+    font-size: clamp(2.1rem, 5.5vw, 4rem);
+    font-weight: 650;
+    margin-bottom: 1.5rem;
+}
+.jumbotron svg { width: 60px; height: 60px; vertical-align: middle; margin-right: 0.5rem; }
+.jumbotron .lead { font-size: clamp(1.05rem, 2.3vw, 1.3rem); color: var(--muted); }
+.jumbotron .professional-title { color: var(--accent); }
+.professional-title { font-weight: 600; }
+.hero-education { color: var(--muted); margin-bottom: 0; font-size: 0.95rem; }
+.hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.85rem; margin-top: 2rem; }
+.portfolio-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 48px;
+    padding: 0.65rem 1.3rem;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #0b1925;
+    border: 1px solid var(--accent);
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.2s;
+}
+.portfolio-button:hover { color: #0b1925; background: #b4e9f8; text-decoration: none; transform: translateY(-2px); }
+.portfolio-button-secondary { background: transparent; border-color: var(--border); color: var(--text); }
+.portfolio-button-secondary:hover { background: var(--surface-raised); color: var(--text); }
+.biography { max-width: 850px; }
+.biography p { margin-bottom: 1.4rem; color: #c5d0e0; }
+.competency-panel { background: transparent; }
+.competency-panel h3 { font-size: 1.2rem; line-height: 1.45; color: var(--accent); }
+.competency-panel .border { border-color: var(--border) !important; background: var(--surface); }
+.competency-panel .rounded { border-radius: 16px !important; }
+.skills-list { list-style: none; padding: 0; margin-bottom: 0; }
+.skills-list li { margin-bottom: 0.45rem; padding-left: 0.85rem; border-left: 2px solid #365169; }
+.card {
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid #528ca5;
+    border-radius: 16px;
+}
+.card-body { padding: clamp(1.25rem, 3vw, 2rem); }
+.card h3 { font-size: 1.35rem; color: var(--accent); }
+.card h4 { font-size: 1.1rem; margin-top: 1.25rem; }
+.card a { color: var(--accent); text-decoration: underline; }
+.project-card { box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12); }
+.project-card h3 { font-size: 1.05rem; color: var(--muted); }
+.project-media img { display: block; width: auto; height: auto; max-height: 720px; margin-bottom: 1rem; border: 1px solid var(--border); }
+.tag-badge { display: inline-block; margin-top: 0.4rem; line-height: 1.5; }
+.reading-content article { padding: 0.5rem 0; }
+.reading-content h3 { font-size: 1.45rem; color: var(--accent); }
+.reading-content .btn-outline-dark { color: var(--accent); border-color: var(--border); }
+.reading-content .btn { white-space: normal; margin-bottom: 0.5rem; border-radius: 8px; }
+a:focus-visible, button:focus-visible, .milestone:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 575px) {
+    .jumbotron .display-4 a { display: block; margin-bottom: 0.6rem; }
+    .container { padding-left: 1rem; padding-right: 1rem; }
+    .project-card { padding: 1rem; }
+    .project-title { overflow-wrap: break-word; }
+    .hero-actions { flex-direction: column; align-items: stretch; max-width: 300px; margin-left: auto; margin-right: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

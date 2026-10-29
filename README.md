@@ -76,7 +76,6 @@ Some projects are based on internal work or NDA-protected research. All demos an
 
 ## 🤝 Contact
 
-- 📧 Email: ai.research1@arifoods.gr
 - 💼 LinkedIn: [Ioannis Tsioukis](https://linkedin.com/in/ioannis-tsioukis)
 - 🌐 Website: [https://pydevian.github.io/personal_website/](https://pydevian.github.io/personal_website/)
 

@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AI Systems Architect Roadmap</title>
+  <title>Roadmap | Ioannis Tsioukis — AI Engineering Lead</title>
+    <meta name="description" content="From Python and ML foundations to AI engineering leadership, production delivery, and planned development in agents and cloud architecture.">
+    <link rel="canonical" href="https://pydevian.github.io/personal_website/Roadmap.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Roadmap | Ioannis Tsioukis — AI Engineering Lead">
+    <meta property="og:description" content="From Python and ML foundations to AI engineering leadership, production delivery, and planned development in agents and cloud architecture.">
+    <meta property="og:url" content="https://pydevian.github.io/personal_website/Roadmap.html">
   <link rel="icon" type="image/x-icon" href="Static/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -13,14 +19,14 @@
   />
 
   <!-- Your global CSS -->
-  <link rel="stylesheet" href="Static/style.css">
 
   <!-- Bootstrap 4 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Static/style.css">
 
   <style>
     body {
-      background: linear-gradient(to bottom, #000000, #161b22);
+      background: var(--page-background);
       color: #e6edf3;
       font-family: "Segoe UI", sans-serif;
       margin: 0;
@@ -30,8 +36,8 @@
 
     h1 {
       text-align: center;
-      color: #f0c674;
-      margin-bottom: 60px;
+      color: var(--accent);
+      margin-bottom: 24px;
     }
 
     .roadmap {
@@ -43,25 +49,26 @@
       overflow-x: auto;
       overflow-y: visible; /* allows tooltips to escape vertically */
       padding-bottom: 60px;
-      padding-top: 100px;
+      padding-top: 120px;
       border-bottom: 2px dashed #30363d;
       position: relative;
     }
 
     .milestone {
       position: relative;
-      background-color: #1c2128;
+      background-color: var(--surface);
       border: 1px solid #30363d;
-      border-radius: 10px;
+      border-radius: 18px;
       padding: 20px 15px;
       width: 220px;
       flex-shrink: 0;
       transition: transform 0.3s;
       cursor: pointer;
-      outline: none;
+      outline-offset: 4px;
     }
 
-    .milestone:hover {
+    .milestone:hover,
+    .milestone:focus {
       transform: translateY(-10px);
     }
 
@@ -71,7 +78,7 @@
     }
 
     /* Icon colors by "year bucket" */
-    .milestone[data-year="2023"] .icon { color: #f0c674; }
+    .milestone[data-year="2023"] .icon { color: var(--accent); }
     .milestone[data-year="2024"] .icon { color: #b392f0; }
     .milestone[data-year="2025"] .icon { color: #58a6ff; }
     .milestone[data-year="2026 Q1-Q2"] .icon { color: #00e5ff; }
@@ -103,7 +110,8 @@
       padding: 12px 14px;
       border-radius: 8px;
       font-size: 0.85em;
-      max-width: 520px;
+      width: 300px;
+      max-width: 80vw;
       text-align: left;
       visibility: hidden;
       opacity: 0;
@@ -121,13 +129,18 @@
     }
 
     /* Difficulty height ladder (visual progression) */
-    .milestone[data-difficulty="1"] { height: 200px; }
-    .milestone[data-difficulty="2"] { height: 225px; }
-    .milestone[data-difficulty="3"] { height: 255px; }
-    .milestone[data-difficulty="4"] { height: 295px; }
-    .milestone[data-difficulty="5"] { height: 335px; }
-    .milestone[data-difficulty="6"] { height: 380px; }
-    .milestone[data-difficulty="7"] { height: 430px; }
+    .milestone[data-difficulty="1"] { min-height: 200px; }
+    .milestone[data-difficulty="2"] { min-height: 225px; }
+    .milestone[data-difficulty="3"] { min-height: 255px; }
+    .milestone[data-difficulty="4"] { min-height: 295px; }
+    .milestone[data-difficulty="5"] { min-height: 335px; }
+    .milestone[data-difficulty="6"] { min-height: 380px; }
+    .milestone[data-difficulty="7"] { min-height: 430px; }
+
+    @media (min-width: 801px) {
+      .milestone:first-child .milestone-tip { left: 70%; }
+      .milestone:last-child .milestone-tip { left: 30%; }
+    }
 
     @media (max-width: 800px) {
       .roadmap {
@@ -135,8 +148,11 @@
         align-items: center;
         padding-top: 40px;
       }
+      .roadmap .milestone { width: min(100%, 420px); min-height: 0; height: auto; }
       .milestone-tip {
-        top: -10px;
+        position: static;
+        display: none;
+        margin-top: 1rem;
         left: 0;
         transform: none;
         width: 100%;
@@ -144,7 +160,8 @@
       }
       .milestone:hover .milestone-tip,
       .milestone:focus-within .milestone-tip {
-        transform: translateY(-6px);
+        display: block;
+        transform: none;
       }
     }
   </style>
@@ -152,7 +169,7 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black; padding-top: 0%;">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" >
     <a class="navbar-brand" href="index.html">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#siteNavbar" aria-controls="siteNavbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -161,15 +178,19 @@
       <div class="navbar-nav ml-auto">
         <a class="navbar-brand" href="Skillset.html">My Skillset</a>
         <a class="navbar-brand" href="projects.html">Portfolio</a>
-        <a class="navbar-brand" href="reading.html">Tech News</a>
+        <a class="navbar-brand" href="reading.html">Reading &amp; Insights</a>
         <a class="navbar-brand" href="milestones.html">Milestones</a>
         <a class="navbar-brand" href="contact.html">Contact Me</a>
-        <a class="navbar-brand" href="Roadmap.html">Roadmap</a>
+        <a class="navbar-brand" href="Roadmap.html" aria-current="page">Roadmap</a>
       </div>
     </div>
   </nav>
 
-  <h1>AI Systems Architect Roadmap</h1>
+  <h1>AI Engineering Leadership Roadmap</h1>
+  <p class="text-center professional-title">AI Department Manager | AI Engineering Lead</p>
+  <p class="text-center">Technical Delivery · Applied AI &amp; LLM Systems · Solution Architecture</p>
+  <p class="text-center">2023–2025: historical foundations · 2026: current work and completed education · 2027 onward: development plans.</p>
+  <p class="text-center">Hover over or focus each milestone to read more.</p>
 
   <div class="roadmap">
     <div class="milestone" tabindex="0" data-year="2023" data-difficulty="1">
@@ -208,44 +229,36 @@
     <div class="milestone" tabindex="0" data-year="2026 Q1-Q2" data-difficulty="4">
       <div class="icon"><i class="fas fa-scale-balanced"></i></div>
       <div class="year">2026 Q1–Q2</div>
-      <div class="desc">AI Lead Engineer: Ownership + Governance</div>
+      <div class="desc">AI Engineering Leadership &amp; Technical Delivery</div>
       <div class="milestone-tip">
-        Leadership phase: establishing AI department practices and governance across projects.<br/>
-        <b>Scope:</b> standards (data, evaluation, deployment), documentation, risk controls, stakeholder alignment.<br/>
-        <b>Next:</b> formal cloud AI engineering certs + stronger frontend delivery for products.
+        AI department ownership, technical roadmaps, business discovery, solution architecture, and project prioritization.<br/><b>Scope:</b> stakeholder and partner coordination, engineering governance, and production-readiness standards.
       </div>
     </div>
 
     <div class="milestone" tabindex="0" data-year="2026 Q3-Q4" data-difficulty="5">
       <div class="icon"><i class="fas fa-gears"></i></div>
       <div class="year">2026 Q3–Q4</div>
-      <div class="desc">Full-Stack AI Developer: Certs + Product UI</div>
+      <div class="desc">Production Delivery &amp; MSc Completion</div>
       <div class="milestone-tip">
-        Certification + product polish phase.<br/>
-        <b>Targets:</b> PCPP1, Azure AI-102 track, improved frontend delivery (Jinja2 + Bootstrap).<br/>
-        <b>Outcome:</b> faster end-to-end shipping from UI → API → data → model.
+        Production LLM applications, on-premises AI infrastructure, testing, observability, and cross-functional engineering governance.<br/><b>Completed:</b> MSc Data Science and Machine Learning, Hellenic Open University — July 13, 2026.<br/><b>Current training:</b> Azure AI-200 and AI-103 courses.
       </div>
     </div>
 
     <div class="milestone" tabindex="0" data-year="2027" data-difficulty="6">
       <div class="icon"><i class="fas fa-diagram-project"></i></div>
-      <div class="year">2027</div>
-      <div class="desc">AI Systems Architecture: Multi-service Design</div>
+      <div class="year">2027 — Planned</div>
+      <div class="desc">Advanced Agent Engineering &amp; Cloud Architecture</div>
       <div class="milestone-tip">
-        Designing complete AI platforms: service boundaries, vector DB patterns, observability, realtime inference APIs.<br/>
-        <b>Focus:</b> reliability, scalability, cost control, monitoring, incident-ready systems.<br/>
-        <b>Next:</b> enterprise-wide reference architectures and strategy impact.
+        <b>Development targets:</b> multi-agent orchestration, LangGraph, LangSmith, evaluation, reliable AI workflows, and human approval and governance patterns.<br/><b>Cloud focus:</b> application engineering and Azure AI agent development.<br/><b>Certification plan:</b> AI-103 path, then later AI-500 preparation; neither credential is claimed as earned.
       </div>
     </div>
 
     <div class="milestone" tabindex="0" data-year="2028" data-difficulty="7">
       <div class="icon"><i class="fas fa-chess-king"></i></div>
-      <div class="year">2028</div>
-      <div class="desc">AI Systems Architect: Strategy + Platform Leadership</div>
+      <div class="year">2028 and Beyond — Long-Term Direction</div>
+      <div class="desc">AI Technology Leadership</div>
       <div class="milestone-tip">
-        Full architecture ownership: AI strategy, reference architectures, MLOps orchestration, analytics path (DP-600 scope).<br/>
-        <b>Outcome:</b> organization-wide standards + scalable AI platform delivery.<br/>
-        <b>North star:</b> “AI systems that survive reality.”
+        <b>Aspirations:</b> technical leadership of AI-focused engineering teams, end-to-end AI product delivery, solution architecture, and engineering strategy.<br/><b>Direction:</b> coordination across specialized engineering disciplines, technical consulting, and delivery governance, with continued hands-on Applied AI expertise.
       </div>
     </div>
   </div>

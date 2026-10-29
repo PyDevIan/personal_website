@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio – Ioannis Tsioukis</title>
+    <title>Portfolio | Ioannis Tsioukis — AI Engineering Lead</title>
+    <meta name="description" content="Engineering delivery: an on-premises HR RAG assistant, AI-assisted invoice processing and ERP integration, and industrial alert automation.">
+    <link rel="canonical" href="https://pydevian.github.io/personal_website/projects.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portfolio | Ioannis Tsioukis — AI Engineering Lead">
+    <meta property="og:description" content="Engineering delivery: an on-premises HR RAG assistant, AI-assisted invoice processing and ERP integration, and industrial alert automation.">
+    <meta property="og:url" content="https://pydevian.github.io/personal_website/projects.html">
     <link rel="icon" type="image/x-icon" href="Static/favicon.png">
-    <link rel="stylesheet" href="Static/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Static/style.css">
     <style>
         .project-card {
-            background-color: #111;
+            background-color: var(--surface);
             color: #eee;
-            border: 1px solid #333;
-            border-radius: 10px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
             margin-bottom: 2rem;
             padding: 1.5rem;
         }
 
         .project-title {
-            color: #ffd700;
+            color: var(--accent);
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
@@ -40,7 +46,7 @@
         }
 
         .tag-badge {
-            background-color: #333;
+            background-color: var(--surface-raised);
             color: #ccc;
             padding: 0.3rem 0.6rem;
             border-radius: 4px;
@@ -49,18 +55,18 @@
         }
 
         body {
-            background-color: #000;
+            background-color: var(--background);
         }
 
         .container {
-            padding-top: 80px;
+            padding-top: 20px;
         }
     </style>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" >
         <a class="navbar-brand" href="index.html">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#siteNavbar" aria-controls="siteNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -68,8 +74,8 @@
         <div class="collapse navbar-collapse" id="siteNavbar">
             <div class="navbar-nav ml-auto">
                 <a class="navbar-brand" href="Skillset.html">My Skillset</a>
-                <a class="navbar-brand" href="projects.html">Portfolio</a>
-                <a class="navbar-brand" href="reading.html">Tech News</a>
+                <a class="navbar-brand" href="projects.html" aria-current="page">Portfolio</a>
+                <a class="navbar-brand" href="reading.html">Reading &amp; Insights</a>
                 <a class="navbar-brand" href="milestones.html">Milestones</a>
                 <a class="navbar-brand" href="contact.html">Contact Me</a>
                 <a class="navbar-brand" href="Roadmap.html">Roadmap</a>
@@ -78,134 +84,92 @@
     </nav>
 
     <!-- Portfolio Section -->
-    <div class="container">
-        <h1 class="text-white mb-5 text-center">My Portfolio</h1>
-        <div class="project-card">
-            <div class="project-title">Fridge Alert Notification System</div>
-
-            <div class="project-section">
-                <strong>Problem:</strong>
-                <p>
-                    Industrial fridges must maintain strict temperature control for food safety. When a temperature breach is recorded by a fridge monitoring device, delays in response can cause product loss, compliance issues, or operational downtime. There was no automated alert system in place to track, assign, and escalate these events in real time.
-                </p>
-            </div>
-
-            <div class="project-section">
-                <strong>Solution:</strong>
-                <p>
-                    I developed an automated notification agent that monitors a dedicated inbox for alert emails sent by the fridge's industrial recorder. Upon detecting a new alert, it initiates a message loop in Microsoft Teams, notifying key roles (Factory Director, Head Mechanic, Automation Expert).
-                    <br><br>
-                    A FastAPI-powered web interface allows technicians to claim or acknowledge the alert, recording their action. If no one responds within a time window, the agent escalates the alert by re-notifying the team. The loop continues until a resolution email is detected (same device ID, alert marked inactive).
-                    <br><br>
-                    All alerts, acknowledgments, and responsible personnel are logged in a structured CSV file for auditability and trend analysis.
-                </p>
-            </div>
-
-            <div class="project-section project-media">
-                <strong>Demo:</strong>
-                <p>
-                    <!-- Replace below with your image or demo video -->
-                    <img src="Static/alert.png" alt="Fridge Alert Notification in Microsoft Teams">
-                    <img src="Static/fridge_alert.png" alt="Fridge Alert System FastAPI-powered UI">
-                    <!-- Or embed a video -->
-                    <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
-                </p>
-            </div>
-
-            <div class="project-section project-links">
-                <strong>Links:</strong><br>
-                    <a href="#" onclick="return false;" style="pointer-events: none; color: grey; text-decoration: line-through;">
-                    Repository (Private)
-                </a>
-                <p><em>Codebase is internal and protected under NDA.</em></p>
-            </div>
-
-            <div class="project-section">
-                <strong>Technologies:</strong><br>
-                <span class="tag-badge">Python</span>
-                <span class="tag-badge">FastAPI</span>
-                <span class="tag-badge">Microsoft Teams Bot</span>
-                <span class="tag-badge">Email Automation</span>
-                <span class="tag-badge">CSV Logging</span>
-                <span class="tag-badge">AsyncIO</span>
-            </div>
-        </div>
-
-        <!-- PROJECT END -->
-         <!-- PROJECT: Invoice Extraction -->
-    <div class="project-card">
-        <div class="project-title">Invoice Extraction & Excel→ERP Pipeline</div>
-
-        <div class="project-section">
-            <strong>Problem:</strong>
-            <p>
-                The finance team receives heterogeneous invoices (Greek/English, mixed layouts) as PDFs and images.
-                Manual keying into the company’s Excel template and then into the ERP is slow, error-prone, and hard to audit.
-                We needed an automated, auditable pipeline that extracts structured fields and adds
-                a human-in-the-loop validation step before bulk uploading into the ERP.
-            </p>
-        </div>
-
-        <div class="project-section">
-            <strong>Solution:</strong>
-            <p>
-                I built a modular extraction service that combines PDF text parsing, OCR with layout awareness, and
-                an LLM-based normalizer to produce a clean, strict schema
-                (Supplier, Invoice Serial, Date, VAT/AFM, Total, TAX, Description, Cost Center).
-                A Streamlit validator app lets authorized users review each row, stamp it as <em>OK</em>, and export only validated rows.
-                An accuracy evaluator measures model quality against ground truth and guides iterative improvements.
-                Finally, validated Excel batches are uploaded to the ERP in one shot.
-            </p>
-        </div>
-
-        <div class="project-section">
-            <strong>How it Works (Pipeline):</strong>
-            <p>
-                <ol style="padding-left:1.2rem;margin:0;">
-                    <li><em>Ingestion</em> — Watch an input folder for PDFs/PNGs. Prefer embedded PDF text; fallback to OCR with layout JSON. Cache all artifacts (raw text, OCR JSON, page thumbnails).</li>
-                    <li><em>Targeted ROI Corrections</em> — For hard fields (VAT/AFM, totals, serial), locate labels/bounding boxes, crop regions on the saved page image, and re-OCR just those areas; run AFM checksum & amount normalization.</li>
-                    <li><em>LLM Normalization</em> — Feed text + corrected hints into the model with a strict JSON contract; enforce types (ISO date, 2-decimal amounts, 9-digit VAT), then write a row to a master Excel file.</li>
-                    <li><em>Accuracy Evaluator</em> — Optionally compare extracted rows against a ground-truth Excel using exact and fuzzy metrics per field plus row-level hybrid scoring. Export a mismatch report for training/threshold tuning.</li>
-                    <li><em>Human-in-the-Loop Validator (Streamlit)</em> — Secure login; left-pane fields; right-pane PDF preview. Editors can adjust fields, select Cost Center, then stamp the row as <strong>OK</strong>. Only <strong>OK</strong> rows are eligible for export.</li>
-                    <li><em>Validated Export</em> — Create a new Excel with <strong>OK & not yet exported</strong> rows. Mark those rows as <strong>EXPORTED</strong> in the master sheet (with user/date stamp) to prevent duplicates.</li>
-                    <li><em>ERP Batch Upload</em> — The exported Excel follows the ERP’s import schema. A lightweight uploader script posts the file to the ERP endpoint (or drops it to a watched folder), logging responses for auditability.</li>
-                </ol>
-            </p>
-        </div>
-
-        <div class="project-section project-media">
-            <strong>Visual Preview:</strong>
-            <p>
-                <!-- Replace the image paths below with your generated assets -->
-                <img src="Static/invoice_flow.png" alt="Invoice Extraction & Validation Flow">
-            </p>
-        </div>
-
-        <div class="project-section project-links">
-            <strong>Links:</strong><br>
-            <a href="#" onclick="return false;" style="pointer-events: none; color: grey; text-decoration: line-through;">
-                Repository (Private)
-            </a>
-            <p><em>Codebase is internal and protected under NDA.</em></p>
-        </div>
-
-        <div class="project-section">
-            <strong>Technologies:</strong><br>
-            <span class="tag-badge">Python</span>
-            <span class="tag-badge">pdfplumber / PyMuPDF</span>
-            <span class="tag-badge">OCR + Layout JSON</span>
-            <span class="tag-badge">OpenAI / LLaMA</span>
-            <span class="tag-badge">Streamlit (Validator)</span>
-            <span class="tag-badge">Pandas / OpenPyXL</span>
-            <span class="tag-badge">Excel→ERP Batch Upload</span>
-            <span class="tag-badge">Auth & Audit Stamps</span>
-            <span class="tag-badge">Accuracy Evaluator</span>
-        </div>
-    </div>
-    <!-- PROJECT END -->
-        <!-- Duplicate the project-card div for more projects -->
-
-    </div>
+    <main class="container">
+        <h1 class="text-white mb-3 text-center">My Portfolio</h1>
+        <p class="text-center professional-title">AI Department Manager | AI Engineering Lead</p>
+        <p class="text-center mb-5">Technical Delivery · Applied AI &amp; LLM Systems · Solution Architecture</p>
+<article class="project-card">
+<h2 class="project-title">On-Premises HR Knowledge Assistant — RAG &amp; LLM Integration</h2>
+<div class="project-section">
+<strong>Problem:</strong>
+<p>Employees need convenient access to accurate internal information and HR policies, while unresolved requests require a structured escalation process.</p>
+</div>
+<div class="project-section">
+<strong>Solution:</strong>
+<p>I designed and deployed an internal HR knowledge assistant powered by a locally hosted Qwen LLM and Retrieval-Augmented Generation. It retrieves relevant internal information and provides personalized employee guidance using a user-agnostic application architecture.</p>
+<p>Unresolved requests can be escalated through an integrated Jira workflow. The model and application are hosted on-premises, supporting organizational control over the deployment environment.</p>
+</div>
+<p><em>Internal implementation; source code is private.</em></p>
+<div class="project-section"><strong>Technologies:</strong><br>
+<span class="tag-badge">Python</span>
+<span class="tag-badge">RAG</span>
+<span class="tag-badge">Qwen LLM</span>
+<span class="tag-badge">Vector Search</span>
+<span class="tag-badge">Jira Integration</span>
+<span class="tag-badge">On-Premises Deployment</span>
+</div></article>
+<article class="project-card">
+<h2 class="project-title">AI-Assisted Invoice Processing &amp; ERP Integration</h2>
+<div class="project-section">
+<strong>Problem:</strong>
+<p>Mixed Greek and English invoices arrive as PDFs and images with varied layouts. Manual transcription into Excel and ERP workflows is time-consuming, error-prone, and difficult to audit.</p>
+</div>
+<div class="project-section">
+<strong>Solution:</strong>
+<p>I designed and delivered an AI-assisted document processing workflow combining PDF extraction, OCR fallback, LLM-based structured data normalization, human-in-the-loop validation, duplicate prevention, and auditable export controls for ERP workflows.</p>
+<ol>
+<li>Extract embedded PDF text, falling back to layout-aware OCR and targeted field corrections when needed.</li>
+<li>Normalize invoice fields into a strict schema, with date, amount, and VAT checks. An optional evaluator compares extraction results against ground truth.</li>
+<li>Let authorized users review and correct fields alongside a PDF preview in a Streamlit validator.</li>
+<li>Export only validated, not-yet-exported rows to the ERP import format, recording user and date stamps to support duplicate prevention and auditability.</li>
+</ol>
+<p>Human review controls which records are exported for ERP import.</p>
+</div>
+<div class="project-section project-media"><h3>Workflow Preview</h3>
+<img src="Static/invoice_flow.png" alt="Invoice extraction, human validation, and export workflow diagram">
+</div>
+<p><em>Internal implementation; source code is private.</em></p>
+<div class="project-section"><strong>Technologies:</strong><br>
+<span class="tag-badge">Python</span>
+<span class="tag-badge">pdfplumber / PyMuPDF</span>
+<span class="tag-badge">OCR + Layout JSON</span>
+<span class="tag-badge">OpenAI / LLaMA</span>
+<span class="tag-badge">Streamlit Validator</span>
+<span class="tag-badge">Pandas / OpenPyXL</span>
+<span class="tag-badge">ERP Import Format</span>
+<span class="tag-badge">Authentication &amp; Audit Stamps</span>
+<span class="tag-badge">Accuracy Evaluator</span>
+</div></article>
+<article class="project-card">
+<h2 class="project-title">Fridge Alert Notification System</h2>
+<div class="project-section">
+<strong>Problem:</strong>
+<p>Industrial temperature alerts need timely acknowledgment, a clear owner, and reliable follow-up to support food-storage operations.</p>
+</div>
+<div class="project-section">
+<strong>Solution:</strong>
+<p>I developed an automated industrial monitoring workflow that processes alert emails from fridge recorders and sends Microsoft Teams notifications to the responsible operational roles.</p>
+<p>A FastAPI-based acknowledgment interface lets technicians claim or acknowledge an alert and records their response. Unacknowledged alerts trigger escalation and follow-up notifications until a matching resolution email identifies the device alert as inactive.</p>
+<p>Structured CSV logs record alerts, acknowledgments, and responsible personnel, supporting auditability and operational reliability.</p>
+</div>
+<div class="project-section project-media"><h3>Demo</h3>
+<img src="Static/alert.png" alt="Fridge temperature alert notification in Microsoft Teams">
+<img src="Static/fridge_alert.png" alt="FastAPI interface for acknowledging and claiming fridge alerts">
+</div>
+<p><em>Internal implementation; source code is private.</em></p>
+<div class="project-section"><strong>Technologies:</strong><br>
+<span class="tag-badge">Python</span>
+<span class="tag-badge">FastAPI</span>
+<span class="tag-badge">Microsoft Teams Bot</span>
+<span class="tag-badge">Email Automation</span>
+<span class="tag-badge">CSV Logging</span>
+<span class="tag-badge">AsyncIO</span>
+</div></article>
+        <section class="project-card">
+            <h2 class="project-title">Shared Application Architecture &amp; Observability</h2>
+            <p>Established reusable application templates and shared engineering patterns for authentication, containerized deployment, health monitoring, logging, metrics, and distributed tracing across internal applications.</p>
+        </section>
+    </main>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
