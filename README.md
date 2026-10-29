@@ -1,86 +1,39 @@
-# Personal Website – Ioannis Tsioukis (aka PyDevIan)
+# Ioannis Tsioukis - Personal Portfolio
 
-Welcome to the source code of my personal website!
+Static professional portfolio for an AI Department Manager and hands-on AI Engineering Lead.
 
-🔗 **Live site:** [https://pydevian.github.io/personal_website/](https://pydevian.github.io/personal_website/)
+Live site: [pydevian.github.io/personal_website](https://pydevian.github.io/personal_website/)
 
-This website serves as my digital presence, where I share my background, technical expertise, ongoing projects, and personal journey in AI, data science, and machine learning. It also explains my approach to engineering delivery and documents my professional development.
+## Pages
 
----
+- `index.html`: professional overview, three selected projects, and direct recruiter contact.
+- `experience.html`: dated career progression, leadership scope, and qualifications.
+- `projects.html`: company-neutral case studies with personal contributions, engineering decisions, workflow diagrams, and delivered capabilities.
+- `Skillset.html`: leadership, Applied AI, architecture, and production-readiness competencies.
+- `reading.html`: evergreen How I Work page; the existing URL is retained.
+- `contact.html`: email, LinkedIn, public CV, and professional profiles.
+- `milestones.html`: education and earned credentials, with additional training and future learning in native disclosure sections.
+- `Roadmap.html`: historical milestones and future plans; linked from the footer.
 
-## 📁 Project Structure
+## Assets
 
-personal_website/
+`Static/style.css` provides the shared dark theme and responsive styles. The three editable SVG workflow diagrams are `hr-assistant.svg`, `invoice-processing.svg`, and `fridge-alerts.svg`. Existing project illustrations and screenshots are retained.
 
-│
+`Static/Ioannis-Tsioukis-CV.pdf` is the public portfolio edition of the supplied October 21, 2026 CV. It uses confirmed role dates and qualifications, generic employer wording, the approved personal email, and interest in remote opportunities. It omits employer names, residential location, and telephone details. The original CV is not included or modified.
 
-├── index.html             # Homepage
+## Hosting and behavior
 
-├── Skillset.html          # My technical & soft skillset
+The site runs directly on GitHub Pages at `/personal_website/`. All internal links and assets use relative paths with their original case-sensitive filenames. No installation, build step, application server, database, form backend, analytics, or account is required.
 
-├── projects.html          # Project Portfolio with videos and repo links
+Bootstrap 4.5.2 CSS and JavaScript and jQuery are loaded from the existing public CDNs. Font Awesome remains on the roadmap. Bootstrap controls mobile navigation; native HTML disclosure elements provide expandable training and project media. The main content, CV links, and diagrams are static HTML, PDF, CSS, and SVG assets.
 
-├── reading.html           # How I Work: evergreen engineering delivery approach
+## Public content
 
-├── milestones.html        # Key achievements (academic, career, personal)
+Project descriptions and diagrams are high-level company-neutral summaries. Private repositories, internal policy text, credentials, and deployment hostnames are not published. Historical job titles remain historical; current positioning is AI engineering leadership and technical delivery. Coursework and future learning goals are separate from earned certifications.
 
-├── contact.html           # Contact form or reach-out details
+## Contact
 
-├── Roadmap.html           # Ongoing and future career advamcement goals
-
-│
-
-├── Static/
-
-│   ├── style.css          # Custom styling
-
-│   ├── images/            # Screenshots, demo thumbnails, banners
-
-│   └── scripts/           # Optional JS enhancements (if used)
-
-│
-
-└── README.md              # You’re here
-
----
-
-## ✨ Features
-
-- 🎨 **Dark theme**, minimalist layout, fully responsive with Bootstrap 4
-- 🧠 **Portfolio section** for demo videos and writeups of my private projects (code redacted due to confidentiality)
-- 🧭 **How I Work** for my approach to discovery, architecture, validation, and production delivery
-- 🗺️ **Roadmap and Milestones** to document progress and plan future exploration
-- ✉️ **Contact page** to connect, collaborate, or reach out
-
----
-
-## 🧱 Project Portfolio Guidelines
-
-The `projects.html` page showcases my work using media-rich cards. Each entry includes:
-
-- 🧩 **Problem Statement** – What challenge the project addresses
-- 💡 **Solution Description** – My approach and decisions
-- 📹 **Demo Media** – Video walkthrough or screenshots
-- 🔗 **Links** – To related GitHub repo folders or hosted examples
-- ⚙️ **Tags** – Tech stack, tools used, project type
-
-No proprietary code is exposed — only high-level overviews and visual demos.
-
----
-
-## 🛡️ Disclaimer
-
-Some projects are based on internal work or NDA-protected research. All demos and descriptions are carefully anonymized and scrubbed of sensitive details. Please contact me directly if you have questions or would like to collaborate.
-
----
-
-## 🤝 Contact
-
-- 💼 LinkedIn: [Ioannis Tsioukis](https://linkedin.com/in/ioannis-tsioukis)
-- 🌐 Website: [https://pydevian.github.io/personal_website/](https://pydevian.github.io/personal_website/)
-
----
-
-## 📌 License
-
-This project is shared under the **MIT License** unless otherwise specified. You’re welcome to explore, fork, or adapt the layout — attribution is appreciated.
+- Email: [iantsiouk@proton.me](mailto:iantsiouk@proton.me)
+- LinkedIn: [Ioannis Tsioukis](https://www.linkedin.com/in/ioannis-tsioukis/)
+- GitHub: [PyDevIan](https://github.com/PyDevIan)
+- Interested in remote opportunities.

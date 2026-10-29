@@ -1,178 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio | Ioannis Tsioukis — AI Engineering Lead</title>
-    <meta name="description" content="Engineering delivery: an on-premises HR RAG assistant, AI-assisted invoice processing and ERP integration, and industrial alert automation.">
-    <link rel="canonical" href="https://pydevian.github.io/personal_website/projects.html">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Portfolio | Ioannis Tsioukis — AI Engineering Lead">
-    <meta property="og:description" content="Engineering delivery: an on-premises HR RAG assistant, AI-assisted invoice processing and ERP integration, and industrial alert automation.">
-    <meta property="og:url" content="https://pydevian.github.io/personal_website/projects.html">
-    <link rel="icon" type="image/x-icon" href="Static/favicon.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Static/style.css">
-    <style>
-        .project-card {
-            background-color: var(--surface);
-            color: #eee;
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-        }
-
-        .project-title {
-            color: var(--accent);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-section {
-            margin-bottom: 1rem;
-        }
-
-        .project-links a {
-            color: #0dcaf0;
-            margin-right: 1rem;
-        }
-
-        .project-media img,
-        .project-media iframe {
-            max-width: 100%;
-            border-radius: 5px;
-            margin-top: 0.5rem;
-        }
-
-        .tag-badge {
-            background-color: var(--surface-raised);
-            color: #ccc;
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
-            margin-right: 5px;
-            font-size: 0.8rem;
-        }
-
-        body {
-            background-color: var(--background);
-        }
-
-        .container {
-            padding-top: 20px;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" >
-        <a class="navbar-brand" href="index.html">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#siteNavbar" aria-controls="siteNavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="siteNavbar">
-            <div class="navbar-nav ml-auto">
-                <a class="navbar-brand" href="Skillset.html">My Skillset</a>
-                <a class="navbar-brand" href="projects.html" aria-current="page">Portfolio</a>
-                <a class="navbar-brand" href="reading.html">How I Work</a>
-                <a class="navbar-brand" href="milestones.html">Milestones</a>
-                <a class="navbar-brand" href="contact.html">Contact Me</a>
-                <a class="navbar-brand" href="Roadmap.html">Roadmap</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#0b1018">
+        <title>Projects | Ioannis Tsioukis — AI Engineering Lead</title>
+        <meta name="description" content="Case studies in on-premises HR knowledge retrieval, AI-assisted invoice processing, and industrial alert automation, with personal contributions and engineering decisions.">
+        <link rel="canonical" href="https://pydevian.github.io/personal_website/projects.html">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Projects | Ioannis Tsioukis — AI Engineering Lead">
+        <meta property="og:description" content="Case studies in on-premises HR knowledge retrieval, AI-assisted invoice processing, and industrial alert automation, with personal contributions and engineering decisions.">
+        <meta property="og:url" content="https://pydevian.github.io/personal_website/projects.html">
+        <link rel="icon" type="image/png" href="Static/favicon.png">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="Static/style.css">
+    </head>
+    <body class="">
+        <a class="skip-link" href="#main-content">Skip to content</a>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Main navigation">
+            <a class="navbar-brand" href="index.html" aria-label="Ioannis Tsioukis homepage">IT<span aria-hidden="true">.</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#siteNavbar" aria-controls="siteNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="siteNavbar">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="experience.html">Experience</a>
+                <a class="nav-link" href="projects.html" aria-current="page">Projects</a>
+                <a class="nav-link" href="Skillset.html">Skills</a>
+                <a class="nav-link" href="reading.html">How I Work</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                </div>
+                <a class="nav-cv" href="Static/Ioannis-Tsioukis-CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
             </div>
-        </div>
-    </nav>
-
-    <!-- Portfolio Section -->
-    <main class="container">
-        <h1 class="text-white mb-3 text-center">My Portfolio</h1>
-        <p class="text-center professional-title">AI Department Manager | AI Engineering Lead</p>
-        <p class="text-center mb-5">Technical Delivery · Applied AI &amp; LLM Systems · Solution Architecture</p>
-<article class="project-card">
-<h2 class="project-title">On-Premises HR Knowledge Assistant — RAG &amp; LLM Integration</h2>
-<div class="project-section">
-<strong>Problem:</strong>
-<p>Employees need convenient access to accurate internal information and HR policies, while unresolved requests require a structured escalation process.</p>
-</div>
-<div class="project-section">
-<strong>Solution:</strong>
-<p>I designed and deployed an internal HR knowledge assistant powered by a locally hosted Qwen LLM and Retrieval-Augmented Generation. It retrieves relevant internal information and provides personalized employee guidance using a user-agnostic application architecture.</p>
-<p>Unresolved requests can be escalated through an integrated Jira workflow. The model and application are hosted on-premises, supporting organizational control over the deployment environment.</p>
-</div>
-<p><em>Internal implementation; source code is private.</em></p>
-<div class="project-section"><strong>Technologies:</strong><br>
-<span class="tag-badge">Python</span>
-<span class="tag-badge">RAG</span>
-<span class="tag-badge">Qwen LLM</span>
-<span class="tag-badge">Vector Search</span>
-<span class="tag-badge">Jira Integration</span>
-<span class="tag-badge">On-Premises Deployment</span>
-</div></article>
-<article class="project-card">
-<h2 class="project-title">AI-Assisted Invoice Processing &amp; ERP Integration</h2>
-<div class="project-section">
-<strong>Problem:</strong>
-<p>Mixed Greek and English invoices arrive as PDFs and images with varied layouts. Manual transcription into Excel and ERP workflows is time-consuming, error-prone, and difficult to audit.</p>
-</div>
-<div class="project-section">
-<strong>Solution:</strong>
-<p>I designed and delivered an AI-assisted document processing workflow combining PDF extraction, OCR fallback, LLM-based structured data normalization, human-in-the-loop validation, duplicate prevention, and auditable export controls for ERP workflows.</p>
-<ol>
-<li>Extract embedded PDF text, falling back to layout-aware OCR and targeted field corrections when needed.</li>
-<li>Normalize invoice fields into a strict schema, with date, amount, and VAT checks. An optional evaluator compares extraction results against ground truth.</li>
-<li>Let authorized users review and correct fields alongside a PDF preview in a Streamlit validator.</li>
-<li>Export only validated, not-yet-exported rows to the ERP import format, recording user and date stamps to support duplicate prevention and auditability.</li>
-</ol>
-<p>Human review controls which records are exported for ERP import.</p>
-</div>
-<div class="project-section project-media"><h3>Workflow Preview</h3>
-<img src="Static/invoice_flow.png" alt="Invoice extraction, human validation, and export workflow diagram">
-</div>
-<p><em>Internal implementation; source code is private.</em></p>
-<div class="project-section"><strong>Technologies:</strong><br>
-<span class="tag-badge">Python</span>
-<span class="tag-badge">pdfplumber / PyMuPDF</span>
-<span class="tag-badge">OCR + Layout JSON</span>
-<span class="tag-badge">OpenAI / LLaMA</span>
-<span class="tag-badge">Streamlit Validator</span>
-<span class="tag-badge">Pandas / OpenPyXL</span>
-<span class="tag-badge">ERP Import Format</span>
-<span class="tag-badge">Authentication &amp; Audit Stamps</span>
-<span class="tag-badge">Accuracy Evaluator</span>
-</div></article>
-<article class="project-card">
-<h2 class="project-title">Fridge Alert Notification System</h2>
-<div class="project-section">
-<strong>Problem:</strong>
-<p>Industrial temperature alerts need timely acknowledgment, a clear owner, and reliable follow-up to support food-storage operations.</p>
-</div>
-<div class="project-section">
-<strong>Solution:</strong>
-<p>I developed an automated industrial monitoring workflow that processes alert emails from fridge recorders and sends Microsoft Teams notifications to the responsible operational roles.</p>
-<p>A FastAPI-based acknowledgment interface lets technicians claim or acknowledge an alert and records their response. Unacknowledged alerts trigger escalation and follow-up notifications until a matching resolution email identifies the device alert as inactive.</p>
-<p>Structured CSV logs record alerts, acknowledgments, and responsible personnel, supporting auditability and operational reliability.</p>
-</div>
-<div class="project-section project-media"><h3>Demo</h3>
-<img src="Static/alert.png" alt="Fridge temperature alert notification in Microsoft Teams">
-<img src="Static/fridge_alert.png" alt="FastAPI interface for acknowledging and claiming fridge alerts">
-</div>
-<p><em>Internal implementation; source code is private.</em></p>
-<div class="project-section"><strong>Technologies:</strong><br>
-<span class="tag-badge">Python</span>
-<span class="tag-badge">FastAPI</span>
-<span class="tag-badge">Microsoft Teams Bot</span>
-<span class="tag-badge">Email Automation</span>
-<span class="tag-badge">CSV Logging</span>
-<span class="tag-badge">AsyncIO</span>
-</div></article>
-        <section class="project-card">
-            <h2 class="project-title">Shared Application Architecture &amp; Observability</h2>
-            <p>Established reusable application templates and shared engineering patterns for authentication, containerized deployment, health monitoring, logging, metrics, and distributed tracing across internal applications.</p>
-        </section>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-</body>
+        </nav>
+        <main class="container" id="main-content" tabindex="-1">
+            <header class="page-header">
+                <p class="eyebrow">
+                    Ioannis Tsioukis · AI Engineering Lead
+                </p>
+                <h1>
+                    Projects
+                </h1>
+                <p class="page-intro">
+                    Selected internal applications: the problem, my contribution, engineering decisions, and the capability delivered.
+                </p>
+            </header>
+            <nav class="project-index" aria-label="Jump to a case study">
+                <a href="#hr-assistant">HR knowledge assistant</a><a href="#invoice-processing">Invoice processing</a><a href="#fridge-alerts">Industrial alerts</a>
+            </nav>
+            <p class="case-note">
+                Company-neutral overviews. Internal source code and confidential operational details are not published.
+            </p>
+            <article class="case-study" id="hr-assistant" aria-labelledby="hr-assistant-title">
+                <header class="case-heading">
+                    <p class="eyebrow">
+                        01 / LLM application
+                    </p>
+                    <h2 id="hr-assistant-title">
+                        On-Premises HR Knowledge Assistant
+                    </h2>
+                    <p class="case-subtitle">
+                        RAG &amp; LLM Integration
+                    </p>
+                </header>
+                <div class="case-layout">
+                    <div class="case-story">
+                        <section>
+                            <h3>
+                                Problem
+                            </h3>
+                            <p>
+                                Employees need convenient access to internal information and HR policies, with a structured route for requests the assistant cannot resolve.
+                            </p>
+                        </section>
+                        <section>
+                            <h3>
+                                My role
+                            </h3>
+                            <p>
+                                Designed and deployed the assistant and its LLM, retrieval, and escalation integrations.
+                            </p>
+                        </section>
+                        <section>
+                            <h3>
+                                Key engineering decisions
+                            </h3>
+                            <ul>
+                                <li>
+                                    Use RAG to retrieve relevant internal information for a locally hosted Qwen LLM.
+                                </li>
+                                <li>
+                                    Provide personalized guidance through a user-agnostic application architecture.
+                                </li>
+                                <li>
+                                    Keep the application and model on-premises, with an integrated Jira workflow for unresolved requests.
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="delivered-capability">
+                            <h3>
+                                Delivered capability
+                            </h3>
+                            <p>
+                                An internal HR knowledge assistant that combines information retrieval, personalized guidance, and request escalation in one workflow.
+                            </p>
+                        </section>
+                    </div>
+                    <figure class="architecture-figure">
+                        <img src="Static/hr-assistant.svg" alt="Employee question flows through internal knowledge retrieval to a local Qwen model; unresolved requests can escalate to Jira." width="720" height="600" loading="lazy">
+                        <figcaption>
+                            Simplified workflow overview
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="project-tags" aria-label="Technologies">
+                    <span class="tag-badge">Python</span><span class="tag-badge">RAG</span><span class="tag-badge">Qwen LLM</span><span class="tag-badge">Vector Search</span><span class="tag-badge">Jira</span><span class="tag-badge">On-Premises</span>
+                </div>
+            </article>
+            <article class="case-study" id="invoice-processing" aria-labelledby="invoice-processing-title">
+                <header class="case-heading">
+                    <p class="eyebrow">
+                        02 / Document AI
+                    </p>
+                    <h2 id="invoice-processing-title">
+                        AI-Assisted Invoice Processing
+                    </h2>
+                    <p class="case-subtitle">
+                        Document Validation &amp; ERP Integration
+                    </p>
+                </header>
+                <div class="case-layout">
+                    <div class="case-story">
+                        <section>
+                            <h3>
+                                Problem
+                            </h3>
+                            <p>
+                                Greek and English invoices arrive as PDFs and images with varied layouts. Manual transcription into Excel and ERP workflows is slow, error-prone, and difficult to audit.
+                            </p>
+                        </section>
+                        <section>
+                            <h3>
+                                My role
+                            </h3>
+                            <p>
+                                Designed and delivered the extraction, validation, and controlled export workflow.
+                            </p>
+                        </section>
+                        <section>
+                            <h3>
+                                Key engineering decisions
+                            </h3>
+                            <ul>
+                                <li>
+                                    Prefer embedded PDF text; fall back to layout-aware OCR and targeted field corrections.
+                                </li>
+                                <li>
+                                    Normalize fields into a strict schema with date, amount, and VAT checks; use an optional ground-truth evaluator.
+                                </li>
+                                <li>
+                                    Let authorized users review and correct data alongside PDF previews in a Streamlit validator.
+                                </li>
+                                <li>
+                                    Export only validated, not-yet-exported rows and record user/date stamps.
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="delivered-capability">
+                            <h3>
+                                Delivered capability
+                            </h3>
+                            <p>
+                                A reviewable invoice-to-ERP workflow with structured data, human approval, duplicate-prevention controls, and an auditable export trail.
+                            </p>
+                        </section>
+                    </div>
+                    <figure class="architecture-figure">
+                        <img src="Static/invoice-processing.svg" alt="PDFs and images pass through text extraction and OCR, structured LLM normalization, and human review before validated ERP-format export." width="720" height="600" loading="lazy">
+                        <figcaption>
+                            Simplified workflow overview
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="project-tags" aria-label="Technologies">
+                    <span class="tag-badge">Python</span><span class="tag-badge">OCR</span><span class="tag-badge">Structured LLM Outputs</span><span class="tag-badge">Streamlit</span><span class="tag-badge">ERP Integration</span><span class="tag-badge">Audit Controls</span>
+                </div>
+                <details class="media-details">
+                    <summary>View the original extraction workflow illustration</summary>
+                    <figure class="original-workflow">
+                        <img src="Static/invoice_flow.png" alt="Original illustration of invoice ingestion, OCR corrections, normalization, evaluation, and ERP batch workflow" width="1024" height="1536" loading="lazy">
+                        <figcaption>
+                            Original project illustration. Human review controls which records are exported for ERP import.
+                        </figcaption>
+                    </figure>
+                </details>
+            </article>
+            <article class="case-study" id="fridge-alerts" aria-labelledby="fridge-alerts-title">
+                <header class="case-heading">
+                    <p class="eyebrow">
+                        03 / Workflow automation
+                    </p>
+                    <h2 id="fridge-alerts-title">
+                        Fridge Alert Notification System
+                    </h2>
+                    <p class="case-subtitle">
+                        Industrial Monitoring &amp; Operational Automation
+                    </p>
+                </header>
+                <div class="case-layout">
+                    <div class="case-story">
+                        <section>
+                            <h3>
+                                Problem
+                            </h3>
+                            <p>
+                                Industrial temperature alerts require timely acknowledgment, clear responsibility, and reliable follow-up to support food-storage operations.
+                            </p>
+                        </section>
+                        <section>
+                            <h3>
+                                My role
+                            </h3>
+                            <p>
+                                Developed the email-processing workflow, Teams notifications, and FastAPI acknowledgment interface.
+                            </p>
+                        </section>
+                        <section>
+                            <h3>
+                                Key engineering decisions
+                            </h3>
+                            <ul>
+                                <li>
+                                    Process alert emails from industrial fridge recorders and notify responsible roles in Microsoft Teams.
+                                </li>
+                                <li>
+                                    Provide a FastAPI interface for technicians to claim or acknowledge an alert.
+                                </li>
+                                <li>
+                                    Escalate unanswered alerts and follow up until a matching resolution email marks the device alert inactive.
+                                </li>
+                                <li>
+                                    Log alerts, acknowledgments, and responsible personnel in structured CSV records.
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="delivered-capability">
+                            <h3>
+                                Delivered capability
+                            </h3>
+                            <p>
+                                An automated notification workflow with acknowledgment tracking, follow-up logic, and auditability for operational teams.
+                            </p>
+                        </section>
+                    </div>
+                    <figure class="architecture-figure">
+                        <img src="Static/fridge-alerts.svg" alt="Recorder alert emails trigger Teams notifications, FastAPI acknowledgments, and escalation or closure, with structured CSV audit logs." width="720" height="600" loading="lazy">
+                        <figcaption>
+                            Simplified workflow overview
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="project-tags" aria-label="Technologies">
+                    <span class="tag-badge">Python</span><span class="tag-badge">FastAPI</span><span class="tag-badge">Microsoft Teams</span><span class="tag-badge">Email Processing</span><span class="tag-badge">AsyncIO</span><span class="tag-badge">CSV Logging</span>
+                </div>
+                <details class="media-details">
+                    <summary>View interface examples</summary>
+                    <div class="screenshot-grid">
+                        <figure>
+                            <img src="Static/alert.png" alt="Example fridge alert notification in Microsoft Teams" width="608" height="359" loading="lazy">
+                            <figcaption>
+                                Teams notification
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="Static/fridge_alert.png" alt="Example FastAPI interface for acknowledging a fridge alert" width="600" height="407" loading="lazy">
+                            <figcaption>
+                                Technician acknowledgment interface
+                            </figcaption>
+                        </figure>
+                    </div>
+                </details>
+            </article>
+            <section class="surface-panel foundations">
+                <p class="eyebrow">
+                    Shared engineering foundations
+                </p>
+                <h2>
+                    Application Architecture &amp; Observability
+                </h2>
+                <p>
+                    Established reusable application templates and shared engineering patterns for authentication, containerized deployment, health monitoring, logging, metrics, and distributed tracing across internal applications.
+                </p>
+                <a class="text-link" href="reading.html">Explore my delivery approach <span aria-hidden="true">↗</span></a>
+            </section>
+            <section class="contact-strip">
+                <div>
+                    <h2>
+                        Let’s discuss the engineering.
+                    </h2>
+                    <p>
+                        Connect about Applied AI, enterprise integrations, and technical delivery.
+                    </p>
+                </div>
+                <a class="portfolio-button" href="mailto:iantsiouk@proton.me">Email me <span aria-hidden="true">↗</span></a>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container footer-layout">
+                <div>
+                    <a class="footer-name" href="index.html">Ioannis Tsioukis</a>
+                    <p>
+                        AI Engineering · Technical Delivery · Applied AI
+                    </p>
+                    <p class="remote-note">
+                        Interested in remote opportunities
+                    </p>
+                </div>
+                <nav aria-label="More about my work">
+                    <a href="experience.html">Experience</a><a href="milestones.html">Education &amp; Development</a><a href="Roadmap.html">Career Roadmap</a>
+                </nav>
+                <nav aria-label="Contact and profiles">
+                    <a href="mailto:iantsiouk@proton.me">iantsiouk@proton.me</a><a href="https://www.linkedin.com/in/ioannis-tsioukis/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/PyDevIan" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                </nav>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
 </html>
